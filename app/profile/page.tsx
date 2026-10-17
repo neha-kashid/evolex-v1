@@ -439,10 +439,10 @@ export default function ProfilePage() {
                     return (
                       <div key={strength}>
                         <div className="mb-1.5 flex items-center justify-between gap-3">
-                          <span className="text-sm font-medium text-slate-700">
+                          <span className="text-base font-medium text-slate-700">
                             {strength}
                           </span>
-                          <span className="text-xs text-slate-400">
+                          <span className="text-sm text-slate-400">
                             Selected
                           </span>
                         </div>
@@ -455,7 +455,7 @@ export default function ProfilePage() {
                       </div>
                     );
                   })}
-                  <p className="pt-1 text-xs leading-5 text-slate-400">
+                  <p className="pt-1 text-sm leading-5 text-slate-400">
                     Bars are a visual listing of selected strengths, not measured
                     ability scores.
                   </p>
@@ -482,7 +482,7 @@ export default function ProfilePage() {
                     {interests.map((interest) => (
                       <span
                         key={interest}
-                        className="rounded-full border border-violet-100 bg-violet-50 px-3 py-2 text-sm font-medium text-violet-800"
+                        className="rounded-full border border-violet-100 bg-violet-50 px-3 py-2 text-base font-medium text-violet-800"
                       >
                         {interest}
                       </span>
@@ -490,11 +490,11 @@ export default function ProfilePage() {
                   </div>
                   {audience && (
                     <div className="mt-6 rounded-2xl border border-sky-100 bg-gradient-to-r from-sky-50 to-white p-4">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                      <div className="flex items-center gap-2 text-base font-semibold text-slate-800">
                         <Users className="h-4 w-4 text-sky-700" />
                         Intended audience
                       </div>
-                      <p className="mt-2 text-sm text-slate-600">{audience}</p>
+                      <p className="mt-2 text-base text-slate-600">{audience}</p>
                     </div>
                   )}
                 </>
@@ -521,10 +521,10 @@ export default function ProfilePage() {
                   {preScores.map((item) => (
                     <div key={item.label}>
                       <div className="mb-1.5 flex items-center justify-between">
-                        <span className="text-sm font-medium text-slate-700">
+                        <span className="text-base font-medium text-slate-700">
                           {item.label}
                         </span>
-                        <span className="text-sm font-bold text-violet-700">
+                        <span className="text-base font-bold text-violet-700">
                           {item.score.toFixed(1)}/10
                         </span>
                       </div>
@@ -538,7 +538,7 @@ export default function ProfilePage() {
                   ))}
                   <Link
                     href="/pre-publish-lab"
-                    className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 hover:text-violet-900"
+                    className="mt-2 inline-flex items-center gap-2 text-base font-semibold text-violet-700 hover:text-violet-900"
                   >
                     Open Pre-Publish Lab <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -583,17 +583,17 @@ export default function ProfilePage() {
                   />
                   {postSummary && (
                     <div className="col-span-2 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
-                      <p className="text-sm font-semibold text-emerald-900">
+                      <p className="text-base font-semibold text-emerald-900">
                         Saved analysis
                       </p>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                      <p className="mt-2 text-base leading-6 text-slate-600">
                         {postSummary}
                       </p>
                     </div>
                   )}
                   <Link
                     href="/post-publish-lab"
-                    className="col-span-2 mt-1 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 hover:text-violet-900"
+                    className="col-span-2 mt-1 inline-flex items-center gap-2 text-base font-semibold text-violet-700 hover:text-violet-900"
                   >
                     Open Post-Publish Lab <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -620,15 +620,15 @@ export default function ProfilePage() {
                 <>
                   <div className="rounded-2xl border border-violet-100 bg-gradient-to-br from-white to-violet-50/60 p-4">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full bg-violet-100 px-2.5 py-1 text-xs font-semibold text-violet-700">
+                      <span className="rounded-full bg-violet-100 px-2.5 py-1 text-sm font-semibold text-violet-700">
                         {platform || "Platform not specified"}
                       </span>
                       {contentFormat && (
-                        <span className="rounded-full bg-sky-100 px-2.5 py-1 text-xs font-semibold text-sky-700">
+                        <span className="rounded-full bg-sky-100 px-2.5 py-1 text-sm font-semibold text-sky-700">
                           {contentFormat}
                         </span>
                       )}
-                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-sm font-semibold text-amber-700">
                         {hasResults ? (
                           <CheckCircle2 className="h-3.5 w-3.5" />
                         ) : (
@@ -637,17 +637,17 @@ export default function ProfilePage() {
                         {hasResults ? "Results available" : "Awaiting results"}
                       </span>
                     </div>
-                    <h3 className="mt-3 text-lg font-bold text-slate-900">
+                    <h3 className="mt-3 text-xl font-bold text-slate-900">
                       {concept || "Your content experiment"}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                    <p className="mt-2 text-base leading-6 text-slate-600">
                       {hypothesis ||
                         "Add a hypothesis to make your next content experiment measurable."}
                     </p>
                   </div>
                   <Link
                     href="/experiments"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 hover:text-violet-900"
+                    className="mt-4 inline-flex items-center gap-2 text-base font-semibold text-violet-700 hover:text-violet-900"
                   >
                     View My Experiments <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -672,14 +672,14 @@ export default function ProfilePage() {
                 <div className="space-y-5">
                   {goals.length > 0 && (
                     <div>
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-slate-400">
                         Goals
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {goals.map((goal) => (
                           <span
                             key={goal}
-                            className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-800"
+                            className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-2 text-base font-medium text-emerald-800"
                           >
                             {goal}
                           </span>
@@ -689,14 +689,14 @@ export default function ProfilePage() {
                   )}
                   {formats.length > 0 && (
                     <div>
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-slate-400">
                         Preferred content formats
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {formats.map((format) => (
                           <span
                             key={format}
-                            className="rounded-full border border-sky-100 bg-sky-50 px-3 py-2 text-sm font-medium text-sky-800"
+                            className="rounded-full border border-sky-100 bg-sky-50 px-3 py-2 text-base font-medium text-sky-800"
                           >
                             {format}
                           </span>
@@ -724,13 +724,13 @@ export default function ProfilePage() {
             />
             <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
               <Card className="bg-gradient-to-br from-white via-[#faf8ff] to-[#f0f7ff]">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-violet-600">Current signals</p>
-                <h3 className="mt-3 text-xl font-bold text-slate-900">
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-violet-600">Current signals</p>
+                <h3 className="mt-3 text-2xl font-bold text-slate-900">
                   {strengths.length || interests.length
                     ? `${strengths[0] || interests[0]}${interests[0] && interests[0] !== strengths[0] ? ` + ${interests[0]}` : ""}`
                     : "Your creative identity is taking shape"}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
+                <p className="mt-2 text-base leading-6 text-slate-600">
                   {strengths.length || interests.length
                     ? `Your saved profile highlights ${strengths.length ? strengths.slice(0, 3).join(", ").toLowerCase() : "your selected interests"}. As you complete more experiments, EVOLEX can compare these starting preferences with your content scores and real results.`
                     : "Complete your creator questionnaire and run content experiments. EVOLEX will use those signals to build a more personalized picture over time."}
@@ -744,8 +744,8 @@ export default function ProfilePage() {
                 <SectionTitle icon={<Lightbulb className="h-5 w-5" />} title="Your next best experiment" subtitle="A practical next step based on available evidence." />
                 {preScores.length ? (
                   <>
-                    <p className="text-sm leading-6 text-slate-600">Your lowest recorded pre-publish score is <strong>{[...preScores].sort((a, b) => a.score - b.score)[0].label.toLowerCase()}</strong>. Try improving that one element while keeping the topic and audience consistent.</p>
-                    <p className="mt-3 rounded-xl bg-violet-50 p-3 text-sm font-medium text-violet-800">Suggested test: change one variable, then compare the next result with this experiment.</p>
+                    <p className="text-base leading-6 text-slate-600">Your lowest recorded pre-publish score is <strong>{[...preScores].sort((a, b) => a.score - b.score)[0].label.toLowerCase()}</strong>. Try improving that one element while keeping the topic and audience consistent.</p>
+                    <p className="mt-3 rounded-xl bg-violet-50 p-3 text-base font-medium text-violet-800">Suggested test: change one variable, then compare the next result with this experiment.</p>
                   </>
                 ) : (
                   <EmptyState message="Run a pre-publish analysis to get a next-experiment suggestion grounded in your actual content scores." href="/pre-publish-lab" linkText="Analyze content" />
@@ -761,11 +761,11 @@ export default function ProfilePage() {
                 <HistoryScoreChart history={experimentHistory} />
               ) : preScores.length ? (
                 <div className="rounded-2xl border border-dashed border-violet-200 bg-violet-50/40 p-5">
-                  <p className="text-sm font-semibold text-slate-800">Latest recorded quality scores</p>
+                  <p className="text-base font-semibold text-slate-800">Latest recorded quality scores</p>
                   <div className="mt-4 space-y-3">
                     {preScores.map((item) => <ScoreBar key={item.label} label={item.label} score={item.score} />)}
                   </div>
-                  <p className="mt-4 text-xs leading-5 text-slate-500">A trend needs at least two saved experiment analyses. These bars show your current analysis, not a historical trend.</p>
+                  <p className="mt-4 text-sm leading-5 text-slate-500">A trend needs at least two saved experiment analyses. These bars show your current analysis, not a historical trend.</p>
                 </div>
               ) : <EmptyState message="Your quality trend will appear after you save pre-publish scores. Two or more analyzed experiments are needed to show change over time." href="/pre-publish-lab" linkText="Start pre-publish analysis" />}
             </Card>
@@ -777,7 +777,7 @@ export default function ProfilePage() {
               ) : (
                 <EmptyState message="Prediction accuracy is not available yet. Save a numeric performance prediction with an experiment and record its actual views to compare them here." href="/experiments" linkText="Review experiments" />
               )}
-              <p className="mt-4 text-xs leading-5 text-slate-400">EVOLEX will only calculate accuracy when both a prediction and its matching actual result are saved.</p>
+              <p className="mt-4 text-sm leading-5 text-slate-400">EVOLEX will only calculate accuracy when both a prediction and its matching actual result are saved.</p>
             </Card>
           </section>
 
@@ -786,7 +786,7 @@ export default function ProfilePage() {
               <SectionTitle icon={<Trophy className="h-5 w-5" />} title="Content patterns" subtitle="Find formats or topics that repeatedly perform well." />
               {experimentHistory.length >= 2 ? (
                 <div className="space-y-3">
-                  {getPatternSummary(experimentHistory).map((pattern) => <div key={pattern.label} className="rounded-xl border border-slate-100 bg-slate-50/70 p-3"><p className="text-sm font-semibold text-slate-800">{pattern.label}</p><p className="mt-1 text-xs text-slate-500">{pattern.detail}</p></div>)}
+                  {getPatternSummary(experimentHistory).map((pattern) => <div key={pattern.label} className="rounded-xl border border-slate-100 bg-slate-50/70 p-3"><p className="text-base font-semibold text-slate-800">{pattern.label}</p><p className="mt-1 text-sm text-slate-500">{pattern.detail}</p></div>)}
                 </div>
               ) : <EmptyState message="Complete at least two experiments with recorded outcomes to start comparing content patterns." href="/experiments" linkText="View experiments" />}
             </Card>
@@ -797,17 +797,17 @@ export default function ProfilePage() {
                 <MetricTile label="Experiments saved" value={String(Math.max(experimentHistory.length, experiment ? 1 : 0))} />
                 <MetricTile label="Results recorded" value={String(experimentHistory.filter((item) => item.postAnalysis || item.metrics || item.results).length + (postMetrics && !experimentHistory.length ? 1 : 0))} />
               </div>
-              <p className="mt-4 text-sm leading-6 text-slate-600">Each completed review gives you another learning signal. Keep the hypothesis, change one variable at a time, and record the outcome.</p>
+              <p className="mt-4 text-base leading-6 text-slate-600">Each completed review gives you another learning signal. Keep the hypothesis, change one variable at a time, and record the outcome.</p>
             </Card>
 
             <Card>
               <SectionTitle icon={<ChartNoAxesCombined className="h-5 w-5" />} title="Content mix" subtitle="Understand how your experiments are distributed by format." />
-              {experimentHistory.length ? <ContentMix history={experimentHistory} currentFormat={contentFormat} /> : contentFormat ? <div className="rounded-2xl bg-gradient-to-r from-violet-50 to-sky-50 p-4"><p className="text-sm font-semibold text-slate-800">Current format</p><p className="mt-2 text-sm text-violet-800">{contentFormat}</p><p className="mt-2 text-xs text-slate-500">Save more experiments to build a content-mix comparison.</p></div> : <EmptyState message="Your content mix will appear after you save experiments with their formats." href="/experiments" linkText="Explore experiments" />}
+              {experimentHistory.length ? <ContentMix history={experimentHistory} currentFormat={contentFormat} /> : contentFormat ? <div className="rounded-2xl bg-gradient-to-r from-violet-50 to-sky-50 p-4"><p className="text-base font-semibold text-slate-800">Current format</p><p className="mt-2 text-base text-violet-800">{contentFormat}</p><p className="mt-2 text-sm text-slate-500">Save more experiments to build a content-mix comparison.</p></div> : <EmptyState message="Your content mix will appear after you save experiments with their formats." href="/experiments" linkText="Explore experiments" />}
             </Card>
           </section>
 
           <footer className="py-8 text-center">
-            <p className="text-xs font-medium tracking-[0.12em] text-slate-400">
+            <p className="text-sm font-medium tracking-[0.12em] text-slate-400">
               CREATE WITH INTENTION. EVOLVE WITH INTELLIGENCE.
             </p>
           </footer>
@@ -843,13 +843,13 @@ function StatCard({
         <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${tones[tint]}`}>
           {icon}
         </div>
-        <span className="text-xs font-semibold text-slate-400">PROFILE</span>
+        <span className="text-sm font-semibold text-slate-400">PROFILE</span>
       </div>
-      <p className="mt-4 text-sm font-medium text-slate-500">{label}</p>
+      <p className="mt-4 text-base font-medium text-slate-500">{label}</p>
       <p className="mt-1 text-2xl font-bold tracking-tight text-slate-900">
         {value}
       </p>
-      <p className="mt-1 text-xs leading-5 text-slate-400">{note}</p>
+      <p className="mt-1 text-sm leading-5 text-slate-400">{note}</p>
     </div>
   );
 }
@@ -857,8 +857,8 @@ function StatCard({
 function MetricTile({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-violet-50/40 p-4">
-      <p className="text-xs font-medium text-slate-500">{label}</p>
-      <p className="mt-1 text-xl font-bold text-slate-900">{value}</p>
+      <p className="text-sm font-medium text-slate-500">{label}</p>
+      <p className="mt-1 text-2xl font-bold text-slate-900">{value}</p>
     </div>
   );
 }
@@ -869,7 +869,7 @@ function formatMetric(value: unknown): string {
 
 
 function ProfileChip({ label, blue = false }: { label: string; blue?: boolean }) {
-  return <span className={`rounded-full border px-3 py-1.5 text-xs font-medium ${blue ? "border-sky-100 bg-sky-50 text-sky-800" : "border-violet-100 bg-violet-50 text-violet-800"}`}>{label}</span>;
+  return <span className={`rounded-full border px-3 py-1.5 text-sm font-medium ${blue ? "border-sky-100 bg-sky-50 text-sky-800" : "border-violet-100 bg-violet-50 text-violet-800"}`}>{label}</span>;
 }
 
 function getNumeric(data: Data | null, keys: string[]): number | null {
@@ -883,7 +883,7 @@ function getNumeric(data: Data | null, keys: string[]): number | null {
 }
 
 function ScoreBar({ label, score }: { label: string; score: number }) {
-  return <div><div className="mb-1 flex justify-between gap-3 text-xs"><span className="font-medium text-slate-600">{label}</span><span className="font-bold text-violet-700">{score.toFixed(1)}/10</span></div><div className="h-2 overflow-hidden rounded-full bg-white"><div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-sky-400" style={{ width: `${score * 10}%` }} /></div></div>;
+  return <div><div className="mb-1 flex justify-between gap-3 text-sm"><span className="font-medium text-slate-600">{label}</span><span className="font-bold text-violet-700">{score.toFixed(1)}/10</span></div><div className="h-2 overflow-hidden rounded-full bg-white"><div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-sky-400" style={{ width: `${score * 10}%` }} /></div></div>;
 }
 
 function HistoryScoreChart({ history }: { history: Data[] }) {
@@ -893,13 +893,13 @@ function HistoryScoreChart({ history }: { history: Data[] }) {
     return { label: getText(item, ["concept", "title", "name"]) || `Experiment ${index + 1}`, score };
   }).filter((item): item is { label: string; score: number } => item.score !== null).slice(-8);
   if (points.length < 2) return <EmptyState message="History was found, but at least two entries need a saved overall score to draw a trend." />;
-  return <div className="space-y-4">{points.map((point, index) => <div key={`${point.label}-${index}`}><div className="mb-1 flex justify-between gap-3 text-xs"><span className="truncate text-slate-600">{point.label}</span><strong className="text-violet-700">{point.score.toFixed(1)}/10</strong></div><div className="h-2 rounded-full bg-slate-100"><div className="h-2 rounded-full bg-gradient-to-r from-violet-500 to-sky-400" style={{ width: `${Math.max(0, Math.min(10, point.score)) * 10}%` }} /></div></div>)}</div>;
+  return <div className="space-y-4">{points.map((point, index) => <div key={`${point.label}-${index}`}><div className="mb-1 flex justify-between gap-3 text-sm"><span className="truncate text-slate-600">{point.label}</span><strong className="text-violet-700">{point.score.toFixed(1)}/10</strong></div><div className="h-2 rounded-full bg-slate-100"><div className="h-2 rounded-full bg-gradient-to-r from-violet-500 to-sky-400" style={{ width: `${Math.max(0, Math.min(10, point.score)) * 10}%` }} /></div></div>)}</div>;
 }
 
 function PredictionComparison({ predicted, actual }: { predicted: number; actual: number }) {
   const max = Math.max(predicted, actual, 1);
   const difference = actual - predicted;
-  return <div className="space-y-4"><div><div className="mb-1 flex justify-between text-sm"><span className="text-slate-600">Predicted views</span><strong>{predicted.toLocaleString("en-IN")}</strong></div><div className="h-3 rounded-full bg-slate-100"><div className="h-3 rounded-full bg-violet-400" style={{ width: `${predicted / max * 100}%` }} /></div></div><div><div className="mb-1 flex justify-between text-sm"><span className="text-slate-600">Actual views</span><strong>{actual.toLocaleString("en-IN")}</strong></div><div className="h-3 rounded-full bg-slate-100"><div className="h-3 rounded-full bg-sky-500" style={{ width: `${actual / max * 100}%` }} /></div></div><p className={`rounded-xl p-3 text-sm font-semibold ${difference >= 0 ? "bg-emerald-50 text-emerald-800" : "bg-amber-50 text-amber-800"}`}>{difference >= 0 ? "Above prediction" : "Below prediction"} by {Math.abs(difference).toLocaleString("en-IN")} views</p></div>;
+  return <div className="space-y-4"><div><div className="mb-1 flex justify-between text-base"><span className="text-slate-600">Predicted views</span><strong>{predicted.toLocaleString("en-IN")}</strong></div><div className="h-3 rounded-full bg-slate-100"><div className="h-3 rounded-full bg-violet-400" style={{ width: `${predicted / max * 100}%` }} /></div></div><div><div className="mb-1 flex justify-between text-base"><span className="text-slate-600">Actual views</span><strong>{actual.toLocaleString("en-IN")}</strong></div><div className="h-3 rounded-full bg-slate-100"><div className="h-3 rounded-full bg-sky-500" style={{ width: `${actual / max * 100}%` }} /></div></div><p className={`rounded-xl p-3 text-base font-semibold ${difference >= 0 ? "bg-emerald-50 text-emerald-800" : "bg-amber-50 text-amber-800"}`}>{difference >= 0 ? "Above prediction" : "Below prediction"} by {Math.abs(difference).toLocaleString("en-IN")} views</p></div>;
 }
 
 function getPatternSummary(history: Data[]): { label: string; detail: string }[] {
@@ -920,5 +920,5 @@ function ContentMix({ history, currentFormat }: { history: Data[]; currentFormat
   if (!counts.size && currentFormat) counts.set(currentFormat, 1);
   const total = [...counts.values()].reduce((sum, value) => sum + value, 0);
   if (!total) return <EmptyState message="Save experiment formats to see your content mix." />;
-  return <div className="space-y-3">{[...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([format, count]) => <div key={format}><div className="mb-1 flex justify-between gap-2 text-xs"><span className="text-slate-600">{format}</span><span className="font-semibold text-slate-700">{Math.round(count / total * 100)}%</span></div><div className="h-2 rounded-full bg-slate-100"><div className="h-2 rounded-full bg-gradient-to-r from-violet-500 to-sky-400" style={{ width: `${count / total * 100}%` }} /></div></div>)}</div>;
+  return <div className="space-y-3">{[...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([format, count]) => <div key={format}><div className="mb-1 flex justify-between gap-2 text-sm"><span className="text-slate-600">{format}</span><span className="font-semibold text-slate-700">{Math.round(count / total * 100)}%</span></div><div className="h-2 rounded-full bg-slate-100"><div className="h-2 rounded-full bg-gradient-to-r from-violet-500 to-sky-400" style={{ width: `${count / total * 100}%` }} /></div></div>)}</div>;
 }

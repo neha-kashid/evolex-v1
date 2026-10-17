@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import { upsertExperimentHistory } from "@/lib/experiment-history";
 
@@ -56,6 +56,7 @@ function AnalysisBody({ content }: { content: string }) {
       blocks.push({ type: "quote", lines: [line.slice(2)] });
       continue;
     }
+
     const isList = /^(?:[-*•]|\d+[.)])\s+/.test(line);
     const cleaned = line.replace(/^(?:[-*•]|\d+[.)])\s+/, "");
     const last = blocks[blocks.length - 1];
@@ -71,7 +72,7 @@ function AnalysisBody({ content }: { content: string }) {
     <div className="space-y-3">
       {blocks.map((block, index) =>
         block.type === "quote" ? (
-          <blockquote key={index} className="rounded-xl border border-violet-100 border-l-4 border-l-violet-400 bg-gradient-to-r from-violet-50 via-white to-sky-50 px-4 py-3.5 text-sm font-medium leading-6 text-slate-700 shadow-sm">
+          <blockquote key={index} className="rounded-xl border-l-4 border-violet-400 bg-gradient-to-r from-violet-50 to-sky-50 px-4 py-3.5 text-sm font-medium leading-6 text-slate-700">
             <InlineText text={block.lines[0]} />
           </blockquote>
         ) : block.type === "list" ? (
@@ -145,10 +146,8 @@ function FormattedAnalysis({ analysis }: { analysis: string }) {
   );
 }
 
-
 const sampleAnalysis = `### 1. CONTENT VERDICT
-
-> ✨ STRONG CONCEPT — WITH THE RIGHT HOOK
+**✨ STRONG CONCEPT — WITH THE RIGHT HOOK**
 
 **Example idea:** 5 AI tools that save students time  
 **Platform:** Instagram  
@@ -158,98 +157,87 @@ const sampleAnalysis = `### 1. CONTENT VERDICT
 **Why it could work**
 Students want practical ways to save time. Instead of simply listing AI tools, demonstrate how each tool solves a real student problem.
 
-> **EVOLEX TAKE:** Lead with the outcome, not the tools.
+**EVOLEX AI TAKE:** Lead with the outcome, not the tools.
 
-This is a qualitative assessment, not a guaranteed performance prediction.
+*This is a qualitative assessment, not a guaranteed performance prediction.*
 
 ### 2. HOOK STRATEGY
-
-> 🎬 HOOK A — The relatable problem
-
-“Still spending hours making notes? These AI tools could make your study routine easier.”
+**🎬 HOOK A — The relatable problem**
+> “Still spending hours making notes? These AI tools could make your study routine easier.”
 
 **Why test it:** It starts with a familiar frustration and promises a relevant benefit.
 
-> ⚡ HOOK B — The curiosity angle
-
-“I tested 5 AI tools students should know about. Here’s what each one is actually useful for.”
+**⚡ HOOK B — The curiosity angle**
+> “I tested 5 AI tools students should know about. Here's what each one is actually useful for.”
 
 **Why test it:** It creates curiosity while setting clear expectations.
 
-> **RECOMMENDATION:** Test both openings while keeping the main content as similar as possible.
+**RECOMMENDATION:** Test both openings while keeping the main content as similar as possible.
 
 ### 3. WHAT WORKS
-
-- **A clearly defined audience:** Students can quickly understand why the topic matters to them.
-- **Practical demonstrations:** Showing a real task is more useful than simply listing features.
-- **A repeatable content format:** A numbered list is easy to follow and can become a recurring series.
+- **✓ A clearly defined audience:** Students can quickly understand why the topic matters to them.
+- **✓ Practical demonstrations:** Showing a real task is more useful than simply listing features.
+- **✓ A repeatable content format:** A numbered list is easy to follow and can become a recurring series.
 
 ### 4. WHAT TO IMPROVE
-
 - **01 — Start with the problem:** Skip a generic introduction. Show the challenge or result immediately.
 - **02 — Demonstrate real value:** Show each tool solving a genuine task. Verify results rather than promising unrealistic time savings.
 - **03 — Keep the pace focused:** Give each tool a distinct purpose and remove repetitive explanations.
 
-> **PRIORITY:** Make the first example useful enough to encourage viewers to keep watching.
+**PRIORITY:** Make the first example useful enough to encourage viewers to keep watching.
 
 ### 5. CONTENT STRUCTURE
-
 - **0–3 SEC | HOOK:** Open with a relatable study problem.
 - **3–8 SEC | CONTEXT:** Explain what viewers will learn.
 - **8–30 SEC | DEMONSTRATION:** Show practical examples with readable on-screen labels.
 - **30–40 SEC | RECAP:** Summarize which tool helps with which task.
 - **FINAL SECONDS | CALL TO ACTION:** Ask viewers which study task they want to make easier.
 
-These timings are illustrative; adapt them to the final edit.
+*These timings are illustrative; adapt them to the final edit.*
 
 ### 6. EXPERIMENT HYPOTHESIS
-
-> 🧪 THE TEST
+**🧪 THE TEST**
 
 **Hypothesis:** A problem-focused opening may improve early viewer retention compared with a generic introduction.
 
 - **Version A:** Open with a relatable student problem.
 - **Version B:** Open with a direct list-style introduction.
-- Keep the main content and editing style as consistent as practical.
 
-> **CHANGE ONE PRIMARY VARIABLE:** The opening hook.
+Keep the main content and editing style as consistent as practical.
 
-The hypothesis remains unproven until results are measured.
+**CHANGE ONE PRIMARY VARIABLE:** The opening hook.
+
+*The hypothesis remains unproven until results are measured.*
 
 ### 7. SUCCESS METRIC
+**📊 WHAT TO MEASURE**
 
-> 📊 WHAT TO MEASURE
-
-**PRIMARY METRIC**  
-Early audience retention, if available in platform analytics.
+**PRIMARY METRIC — Early audience retention**  
+Use this if it is available in your platform analytics.
 
 **SUPPORTING METRICS**
-
 - Average watch time
 - Completion rate, if available
 - Shares and saves
 - Relevant comments
 
-**HOW TO EVALUATE**  
+**HOW TO EVALUATE**
 Compare versions using the same metric definitions and comparable reporting windows. Consider differences in distribution and audience.
 
-No actual performance results are available in this sample.
+*No actual performance results are available in this sample.*
 
 ### 8. NEXT ACTION
-
-> 🚀 YOUR PRE-PUBLISH CHECKLIST
-
+**🚀 YOUR PRE-PUBLISH CHECKLIST**
 - Choose a hook to produce first.
 - Prepare a genuine screen-recorded demonstration.
 - Remove unnecessary introductions.
 - Add readable captions and tool names.
 - Define your success metric before publishing.
-- Record actual results in EVOLEX after publishing.
+- Record actual results in EVOLEX AI after publishing.
 
-> **YOUR NEXT EXPERIMENT:** Compare a problem-focused hook with a generic introduction, then use the results to guide your next video.
+**YOUR NEXT EXPERIMENT:** Compare a problem-focused hook with a generic introduction, then use the results to guide your next video.
 
 **SAMPLE REPORT** — Illustrative demonstration content, not a personalized Gemini analysis or a forecast of actual results.`;
-
 
 export default function PrePublishLabPage() {
   const [loading, setLoading] = useState(false);
@@ -260,34 +248,28 @@ export default function PrePublishLabPage() {
   const [format, setFormat] = useState("Reel");
   const [audience, setAudience] = useState("");
   const [goal, setGoal] = useState("Engagement");
+  const [predictedViews, setPredictedViews] = useState("");
   const [video, setVideo] = useState<File | null>(null);
-  const [videoUrl, setVideoUrl] = useState("");
   const [message, setMessage] = useState("");
-  useEffect(() => {
-  if (!video) {
-    setVideoUrl("");
-    return;
+
+
+  function showSampleAnalysis() {
+    setAnalysis(sampleAnalysis);
+    setSampleMode(true);
+    setMessage("Showing a sample report. This is demonstration content, not an analysis of your idea.");
   }
 
-  const url = URL.createObjectURL(video);
-  setVideoUrl(url);
-
-  return () => URL.revokeObjectURL(url);
-}, [video]);
-  function showSampleAnalysis() {
-  setAnalysis(sampleAnalysis);
-  setSampleMode(true);
-  setMessage(
-    "Showing a sample report. This is demonstration content, not an analysis of your idea."
-  );
-}
-
-  
-async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
 
   if (!idea.trim()) {
     setMessage("Please describe your content idea first.");
+    return;
+  }
+
+  const prediction = Number(predictedViews);
+  if (!predictedViews.trim() || !Number.isFinite(prediction) || prediction <= 0) {
+    setMessage("Enter a predicted view count greater than zero before saving this experiment.");
     return;
   }
 
@@ -319,16 +301,19 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 
     setAnalysis(data.analysis);
 
-const now = new Date().toISOString();
+    // Save the prediction and pre-publish analysis together so Post-Publish Lab
+    // can compare this exact experiment with its actual views later.
+    const now = new Date().toISOString();
     const savedExperiment = {
       experimentId: crypto.randomUUID(),
-      opportunity: idea,
-      audience,
+      opportunity: idea.trim(),
+      concept: idea.trim(),
+      audience: audience.trim(),
       format,
-      concept: idea,
-      hypothesis: "",
       platform,
       goal,
+      predictedViews: prediction,
+      hypothesis: "",
       prePublishAnalysis: data.analysis,
       status: "in_progress" as const,
       createdAt: now,
@@ -336,14 +321,14 @@ const now = new Date().toISOString();
     };
 
     try {
-      sessionStorage.setItem("evolex_publish_ready", JSON.stringify(savedExperiment));
       upsertExperimentHistory(savedExperiment);
+      sessionStorage.setItem("evolex_publish_ready", JSON.stringify(savedExperiment));
       sessionStorage.setItem("evolex_experiment_status", JSON.stringify(savedExperiment));
+      setMessage(`Your AI analysis and experiment have been saved. Predicted views: ${prediction.toLocaleString("en-IN")}.`);
     } catch (storageError) {
       console.error("Could not save experiment:", storageError);
+      setMessage("The AI analysis is ready, but EVOLEX AI could not save your experiment. Check browser storage permissions and try again.");
     }
-
-    setMessage("Your AI analysis is ready and your experiment has been saved!");
   } catch (error) {
     setMessage(
       error instanceof Error
@@ -355,9 +340,8 @@ const now = new Date().toISOString();
   }
 }
 
-
   return (
-    <div className="flex min-h-screen bg-[#f8f9ff] text-[#171C46]">
+    <div className="flex min-h-screen bg-gradient-to-br from-[#F8F7FF] via-white to-[#EEF6FF] text-[#171C46]">
       <Sidebar />
 
       <main className="min-w-0 flex-1 px-5 py-10 sm:px-8 lg:px-12 lg:py-14">
@@ -407,7 +391,7 @@ const now = new Date().toISOString();
                 </div>
                 <div>
                   <p className="font-semibold">{step.title}</p>
-                  <p className="mt-1 text-sm text-slate-500">{step.text}</p>
+                  <p className="mt-1 text-xs text-slate-500">{step.text}</p>
                 </div>
               </div>
             ))}
@@ -520,6 +504,30 @@ const now = new Date().toISOString();
                     Give your experiment a clear direction.
                   </p>
                 </div>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-violet-100 bg-gradient-to-r from-violet-50/80 to-sky-50/80 p-4 sm:p-5">
+                <label htmlFor="predicted-views" className="block text-base font-semibold text-slate-800">
+                  Predicted views <span className="text-rose-500">*</span>
+                </label>
+                <p className="mt-1 text-sm leading-6 text-slate-500">
+                  Before publishing, estimate how many views this post will receive. EVOLEX AI will compare this number with your actual views later.
+                </p>
+                <input
+                  id="predicted-views"
+                  type="number"
+                  min="1"
+                  step="1"
+                  required
+                  value={predictedViews}
+                  onChange={(e) => {
+                    setPredictedViews(e.target.value);
+                    setMessage("");
+                  }}
+                  placeholder="e.g. 10000"
+                  className="mt-3 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base outline-none transition placeholder:text-slate-400 focus:border-violet-400 focus:ring-4 focus:ring-violet-100 sm:max-w-sm"
+                />
+                <p className="mt-2 text-xs leading-5 text-slate-500">This is your own forecast, not a guaranteed AI prediction. Enter a number greater than zero.</p>
               </div>
 
               <div className="mt-6">
@@ -637,20 +645,6 @@ const now = new Date().toISOString();
                   </button>
                 </div>
               )}
-            
-              {videoUrl && (
-                <div className="mt-5 overflow-hidden rounded-2xl border border-violet-100 bg-slate-950">
-                  <video
-                    src={videoUrl}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="max-h-[420px] w-full object-contain"
-                  >
-                    Your browser does not support video playback.
-                  </video>
-                </div>
-              )}
             </section>
 
             {/* Submit */}
@@ -659,30 +653,29 @@ const now = new Date().toISOString();
                 <div>
                   <h2 className="font-bold">Ready to explore your idea?</h2>
                   <p className="mt-1 text-sm text-slate-500">
-                    Next, we'll use Gemini to evaluate your content brief.
+                  💡 If Gemini API is temporarily unavailable or experiencing high demand, click <strong> Show Sample Analysis </strong> to explore a sample content analysis and see how EVOLEX AI works.
                   </p>
                 </div>
 
                 
-<button
-  type="submit"
-  disabled={loading}
-  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-200 transition hover:from-violet-700 hover:to-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
->
-  {loading ? "Analyzing your idea..." : "Analyze with Gemini"}
-  {!loading && <span>→</span>}
-</button>
-
-
-<button
-  type="button"
-  onClick={showSampleAnalysis}
-  disabled={loading}
-  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-violet-200 bg-white px-5 py-3.5 text-sm font-semibold text-violet-700 transition hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-60"
->
-  Show sample analysis
-</button>
-
+<div className="flex flex-wrap items-center gap-3">
+  <button
+    type="submit"
+    disabled={loading}
+    className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-200 transition hover:from-violet-700 hover:to-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
+  >
+    {loading ? "Analyzing your idea..." : "Analyze with Gemini"}
+    {!loading && <span>→</span>}
+  </button>
+  <button
+    type="button"
+    onClick={showSampleAnalysis}
+    disabled={loading}
+    className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-violet-200 bg-white px-5 py-3.5 text-sm font-semibold text-violet-700 transition hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-60"
+  >
+    Show sample analysis
+  </button>
+</div>
 
               </div>
 
@@ -698,52 +691,24 @@ const now = new Date().toISOString();
 
             
 {analysis && (
-  <section className={`mt-8 overflow-hidden rounded-3xl border p-5 shadow-[0_18px_55px_rgba(91,67,170,0.09)] sm:p-8 ${
-    sampleMode
-      ? "border-violet-200 bg-gradient-to-br from-white via-[#FAF7FF] to-[#EEF5FF]"
-      : "border-slate-200 bg-gradient-to-br from-white via-[#FAF7FF] to-[#F0F6FF]"
-  }`}>
-    <div className="relative overflow-hidden rounded-2xl border border-white/80 bg-white/75 p-5 shadow-sm sm:p-6">
-      <div className="pointer-events-none absolute -right-8 -top-12 h-36 w-36 rounded-full bg-violet-200/40 blur-3xl" />
-      <div className="relative flex flex-wrap items-start justify-between gap-4">
-        <div className="flex items-start gap-3">
-          <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-xl shadow-sm ${
-            sampleMode ? "bg-gradient-to-br from-violet-100 to-sky-100" : "bg-violet-100"
-          }`}>
-            {sampleMode ? "✧" : "✨"}
-          </div>
-          <div>
-            <div className="flex flex-wrap items-center gap-2">
-              <h2 className="text-xl font-extrabold tracking-tight text-slate-900 sm:text-2xl">
-                {sampleMode ? "Preview the analysis experience" : "Your AI content analysis"}
-              </h2>
-              {sampleMode && (
-                <span className="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[10px] font-extrabold tracking-[0.14em] text-violet-700">
-                  SAMPLE REPORT
-                </span>
-              )}
-            </div>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
-              {sampleMode
-                ? "Explore how EVOLEX organizes content feedback into clear, actionable sections. This example is not based on your idea."
-                : "Powered by Gemini · Use these insights as guidance, not guaranteed outcomes."}
-            </p>
-          </div>
-        </div>
-        <div className="hidden rounded-xl border border-slate-100 bg-white/90 px-3 py-2 text-xs font-semibold text-slate-500 sm:block">
-          {sampleMode ? "DEMO · 8 INSIGHTS" : "AI-GENERATED INSIGHTS"}
-        </div>
+  <section className="mt-8 overflow-hidden rounded-3xl border border-violet-200/80 bg-gradient-to-br from-white via-[#FAF7FF] to-[#F0F6FF] p-5 shadow-[0_18px_55px_rgba(91,67,170,0.08)] sm:p-8">
+    <div className="flex items-center gap-3">
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-100 text-xl">
+        ✨
       </div>
-      {sampleMode && (
-        <div className="relative mt-5 flex items-start gap-3 rounded-xl border border-violet-100 bg-gradient-to-r from-violet-50 to-sky-50 p-3.5">
-          <span className="mt-0.5 text-violet-600">ⓘ</span>
-          <p className="text-xs leading-5 text-slate-600">
-            Sample content only. For feedback tailored to your own idea, complete the form and select <strong className="font-semibold text-slate-800">Analyze with Gemini</strong>.
-          </p>
-        </div>
-      )}
+      <div>
+        <h2 className="text-xl font-bold">{sampleMode ? "Sample content analysis" : "Your AI content analysis"}</h2>
+        <p className="mt-1 text-sm text-slate-500">
+          {sampleMode ? "Demonstration only · Not generated from your content" : "Powered by Gemini · Predictions, not guaranteed outcomes"}
+        </p>
+      </div>
     </div>
 
+    {sampleMode && (
+      <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
+        This is a sample report to preview the layout and type of feedback. It is not based on your idea or video. Click <strong>Analyze with Gemini</strong> to request a personalized analysis.
+      </div>
+    )}
     <FormattedAnalysis analysis={analysis} />
   </section>
 )}
@@ -751,7 +716,7 @@ const now = new Date().toISOString();
           </form>
 
           <p className="mt-8 text-center text-xs text-slate-400">
-            EVOLEX · Create. Learn. Evolve.
+            EVOLEX AI · Create. Learn. Evolve.
           </p>
         </div>
       </main>

@@ -276,8 +276,8 @@ export default function ExperimentsPage() {
           <section className="rounded-[26px] border border-slate-200/80 bg-white p-5 shadow-sm sm:p-7">
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
               <div>
-                <h2 className="text-xl font-bold text-slate-900">Experiment history</h2>
-                <p className="mt-1 text-sm text-slate-500">
+                <h2 className="text-2xl font-bold text-slate-900">Experiment history</h2>
+                <p className="mt-1 text-base text-slate-500">
                   All saved experiments appear here, from planning through post-publish review.
                 </p>
               </div>
@@ -291,7 +291,7 @@ export default function ExperimentsPage() {
                     key={value}
                     type="button"
                     onClick={() => setFilter(value)}
-                    className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
+                    className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                       filter === value
                         ? "bg-violet-700 text-white shadow-sm"
                         : "border border-slate-200 bg-white text-slate-600 hover:border-violet-200 hover:text-violet-700"
@@ -332,11 +332,11 @@ export default function ExperimentsPage() {
                           </div>
                           <div className="min-w-0">
                             <div className="flex flex-wrap items-center gap-2">
-                              <span className="rounded-full bg-violet-100 px-2.5 py-1 text-[11px] font-bold text-violet-700">
+                              <span className="rounded-full bg-violet-100 px-2.5 py-1 text-xs font-bold text-violet-700">
                                 {experiment.platform || "Platform not specified"}
                               </span>
                               <span
-                                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold ${
+                                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${
                                   completed
                                     ? "bg-emerald-50 text-emerald-700"
                                     : "bg-amber-50 text-amber-700"
@@ -349,12 +349,12 @@ export default function ExperimentsPage() {
                                 )}
                                 {completed ? "Post-publish reviewed" : "In progress"}
                               </span>
-                              <span className="text-xs text-slate-400">
+                              <span className="text-sm text-slate-400">
                                 Created {formatDate(experiment.createdAt)}
                               </span>
                             </div>
-                            <h3 className="mt-3 break-words text-lg font-bold text-slate-900">{title}</h3>
-                            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">{hypothesis}</p>
+                            <h3 className="mt-3 break-words text-xl font-bold text-slate-900">{title}</h3>
+                            <p className="mt-2 max-w-2xl text-base leading-7 text-slate-600">{hypothesis}</p>
                             <div className="mt-4 flex flex-wrap gap-2">
                               {experiment.format && <MetaChip label="Format" value={experiment.format} />}
                               {experiment.audience && <MetaChip label="Audience" value={experiment.audience} />}
@@ -365,7 +365,7 @@ export default function ExperimentsPage() {
                         </div>
                         <Link
                           href={completed ? "/post-publish-lab" : "/pre-publish-lab"}
-                          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-violet-200 bg-white px-4 py-2.5 text-sm font-semibold text-violet-700 transition hover:bg-violet-700 hover:text-white"
+                          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-violet-200 bg-white px-4 py-2.5 text-base font-semibold text-violet-700 transition hover:bg-violet-700 hover:text-white"
                         >
                           {completed ? "View review" : "Continue"}
                           <ArrowRight className="h-4 w-4" />
@@ -488,7 +488,7 @@ function StepCard({
 
 function MetaChip({ label, value }: { label: string; value: string }) {
   return (
-    <span className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-600">
+    <span className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-600">
       <span className="font-semibold text-slate-400">{label}:</span> {value}
     </span>
   );
@@ -497,8 +497,8 @@ function MetaChip({ label, value }: { label: string; value: string }) {
 function MiniMetric({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl border border-white bg-white/80 p-3">
-      <p className="text-xs font-medium text-slate-500">{label}</p>
-      <p className="mt-1 text-lg font-bold text-slate-900">{value}</p>
+      <p className="text-sm font-medium text-slate-500">{label}</p>
+      <p className="mt-1 text-xl font-bold text-slate-900">{value}</p>
     </div>
   );
 }

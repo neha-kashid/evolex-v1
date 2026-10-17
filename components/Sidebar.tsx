@@ -21,7 +21,7 @@ export default function Sidebar() {
         href="/"
         className="mb-12 px-2 text-2xl font-extrabold tracking-tight text-[#171C46]"
       >
-        EVOLEX<span className="text-violet-600">.</span>
+        EVOLEX AI<span className="text-violet-600">.</span>
       </Link>
 
       <p className="mb-4 px-3 text-xs font-semibold tracking-widest text-slate-400">

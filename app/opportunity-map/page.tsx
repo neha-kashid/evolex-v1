@@ -162,7 +162,7 @@ export default function OpportunityMap() {
       }
     } catch (error) {
       console.error(
-        "EVOLEX profile could not be loaded:",
+        "EVOLEX AI profile could not be loaded:",
         error
       );
 
@@ -214,7 +214,7 @@ export default function OpportunityMap() {
             </div>
 
             <span className="text-sm font-extrabold tracking-[0.22em] text-[#202653]">
-              EVOLEX
+              EVOLEX AI
             </span>
 
           </div>
@@ -233,7 +233,7 @@ export default function OpportunityMap() {
 
             <Sparkles className="h-3.5 w-3.5" />
 
-            EVOLEX / YOUR PROFILE
+            YOUR EVOLEX AI PROFILE
 
           </div>
 
@@ -250,7 +250,7 @@ export default function OpportunityMap() {
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
 
-            EVOLEX connected your strengths, interests and
+            EVOLEX AI connected your strengths, interests and
             goals to discover content opportunities that could
             fit you.
 
@@ -527,7 +527,7 @@ export default function OpportunityMap() {
 
               <p className="mt-5 max-w-2xl text-sm leading-7 text-white/50">
 
-                EVOLEX is showing you possibilities, not making
+                EVOLEX AI is showing you possibilities, not making
                 the decision for you. Your next step is to experiment
                 and discover what actually resonates with your audience.
 

@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ChartNoAxesCombined, WandSparkles } from "lucide-react";
+import {
+  Compass,
+  FlaskConical,
+  FlaskRound,
+} from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/", icon: "🏠" },
@@ -14,7 +20,7 @@ const navigation = [
 
 const features = [
   {
-    icon: "◇",
+    icon: Compass,
     number: "01",
     eyebrow: "FIND YOUR NEXT MOVE",
     title: "Opportunity Map",
@@ -25,7 +31,7 @@ const features = [
     tone: "violet",
   },
   {
-    icon: "✧",
+    icon: FlaskConical,
     number: "02",
     eyebrow: "BEFORE YOU POST",
     title: "Pre-Publish Lab",
@@ -36,7 +42,7 @@ const features = [
     tone: "blue",
   },
   {
-    icon: "▥",
+    icon: ChartNoAxesCombined,
     number: "03",
     eyebrow: "AFTER YOU POST",
     title: "Post-Publish Lab",
@@ -47,7 +53,7 @@ const features = [
     tone: "indigo",
   },
   {
-    icon: "◈",
+    icon: FlaskRound,
     number: "04",
     eyebrow: "LEARN & ITERATE",
     title: "My Experiments",
@@ -67,7 +73,7 @@ export default function Home() {
       {/* LEFT SIDEBAR */}
       <aside className="flex min-h-screen w-64 shrink-0 flex-col border-r border-violet-100 bg-[#FAF9FF] px-5 py-7 lg:w-72 lg:px-6">
         <Link href="/" className="mb-12 px-2 text-2xl font-extrabold tracking-tight">
-          EVOLEX<span className="text-violet-600">.</span>
+          EVOLEX AI<span className="text-violet-600">.</span>
         </Link>
 
         <p className="mb-4 px-3 text-xs font-semibold tracking-widest text-slate-400">
@@ -149,15 +155,17 @@ export default function Home() {
 
                 <div className="relative">
                   <div className="flex items-start justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-100 bg-white text-3xl shadow-sm">
-                      ✨
-                    </div>
                     <span className="rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">
                       START HERE
                     </span>
                   </div>
 
-                  <h2 className="mt-6 text-2xl font-bold">I&apos;m a New Creator</h2>
+                  <div className="flex flex-col items-center">
+  <WandSparkles className="h-9 w-9 text-sky-600" />
+  <h2 className="mt-6 text-2xl font-bold">
+    I&apos;m a New Creator
+  </h2>
+</div>
 
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     Find your niche, uncover content opportunities, and discover
@@ -184,15 +192,17 @@ export default function Home() {
 
                 <div className="relative">
                   <div className="flex items-start justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-100 bg-white text-3xl shadow-sm">
-                      📈
-                    </div>
                     <span className="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">
                       GROW FURTHER
                     </span>
                   </div>
 
-                  <h2 className="mt-6 text-2xl font-bold">I&apos;m an Existing Creator</h2>
+                  <div className="flex flex-col items-center">
+  <ChartNoAxesCombined className="h-9 w-9 text-violet-600" />
+  <h2 className="mt-6 text-2xl font-bold">
+    I&apos;m an Existing Creator
+  </h2>
+</div>
 
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     Understand your content performance, uncover patterns, and
@@ -232,7 +242,7 @@ export default function Home() {
                 One creative journey. <span className="text-violet-600">Smarter decisions.</span>
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-                EVOLEX helps you move from an idea to an experiment, then learn
+                EVOLEX AI helps you move from an idea to an experiment, then learn
                 from what actually happens.
               </p>
             </div>
@@ -266,7 +276,7 @@ export default function Home() {
                               : "bg-violet-50 text-violet-700"
                       }`}
                     >
-                      {feature.icon}
+                    <feature.icon className="h-6 w-6" aria-hidden="true" />
                     </div>
                     <span className="text-base font-bold tracking-widest text-slate-300">
                       {feature.number}
@@ -306,7 +316,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="inline-flex items-center gap-2 rounded-full border border-violet-100 bg-white/90 px-4 py-2 text-xs font-bold tracking-[0.16em] text-violet-700 shadow-sm">
                     <span className="h-2 w-2 rounded-full bg-violet-500" />
-                    ABOUT EVOLEX
+                    ABOUT EVOLEX AI
                   </span>
                   <span className="text-sm font-medium text-slate-500">
                     A smarter loop for every creator
@@ -323,7 +333,7 @@ export default function Home() {
                     </h2>
 
                     <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600">
-                      EVOLEX is an AI-powered content intelligence workspace
+                      EVOLEX AI is an AI-powered content intelligence workspace
                       that helps you turn creative ideas into intentional
                       experiments. Discover opportunities, prepare stronger
                       content before publishing, and learn from the results
@@ -332,7 +342,7 @@ export default function Home() {
 
                     <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
                       Whether you&apos;re finding your niche or refining an
-                      established strategy, EVOLEX helps you explore new
+                      established strategy, EVOLEX AI helps you explore new
                       directions, test creative choices, and use available
                       performance data to decide what to improve next. The aim
                       isn&apos;t to chase every view—it&apos;s to understand what
@@ -360,7 +370,7 @@ export default function Home() {
                       <div className="flex items-center justify-between gap-3">
                         <div>
                           <p className="text-xs font-bold tracking-[0.16em] text-violet-600">
-                            THE EVOLEX LOOP
+                            THE EVOLEX AI LOOP
                           </p>
                           <h3 className="mt-2 text-xl font-bold text-[#171C46]">
                             From idea to insight
@@ -393,7 +403,7 @@ export default function Home() {
 
                     <div className="rounded-2xl border border-violet-100 bg-gradient-to-r from-violet-600 to-indigo-600 p-5 text-white shadow-lg shadow-violet-200/60">
                       <p className="text-xs font-bold tracking-[0.16em] text-violet-100">
-                        THE EVOLEX MINDSET
+                        THE EVOLEX AI MINDSET
                       </p>
                       <p className="mt-2 text-lg font-semibold leading-7">
                         Don&apos;t just publish more. Learn something from every post.
