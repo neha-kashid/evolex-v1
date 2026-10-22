@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EVOLEX AI — AI-Powered Content Intelligence for Creators
 
-## Getting Started
+**EVOLEX AI** helps digital content creators make informed decisions throughout their content journey—from discovering opportunities and evaluating ideas to analyzing videos and learning from experiments.
 
-First, run the development server:
+Built for the **Google Cloud AI Builder Cup 2026**, EVOLEX combines Google's Gemini API with a creator-focused workflow to help creators move from guesswork to informed experimentation.
+
+## ✨ Features
+
+### 1. Opportunity Map
+Discover personalized content opportunities aligned with creator interests, strengths, and goals.
+
+### 2. Pre-Publish Lab
+Evaluate content ideas before publishing. Gemini helps analyze hooks, clarity, structure, and audience fit, providing actionable suggestions for improvement.
+
+### 3. Post-Publish Lab
+Analyze uploaded videos across the beginning, middle, and ending to identify storytelling strengths and areas for improvement. Generate alternative hooks and recommendations for future content.
+
+### 4. My Experiments
+Track content experiments and hypotheses to support structured, data-driven content improvement.
+
+### 5. Creator Profile & Intelligence
+Explore content quality trends, content patterns, content mix, and Creator DNA signals to understand strengths and identify areas to focus on.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js
+- **Styling:** Tailwind CSS
+- **AI:** Google Gemini API
+- **AI Model:** Google Gemini 3.0 Flash (gemini-3.8-flash)
+- **Deployment:** Google Cloud Run
+- **Secret Management:** Google Cloud Secret Manager
+
+Gemini requests are handled through server-side API routes. The deployed application uses Google Cloud Secret Manager to manage the API key.
+
+## 🏗️ How It Works
+
+1. Creators interact with the EVOLEX AI web application.
+2. The Next.js application handles the interface and server-side API requests.
+3. Relevant content and requests are processed using the Gemini API.
+4. The application presents AI-generated analysis and recommendations through its creator-focused workflows.
+
+## 🌐 Live Demo
+
+**[Launch EVOLEX AI](https://evolex-ai-837859545416.asia-south1.run.app)**
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js and npm
+- A Google Gemini API key
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/neha-kashid/evolex-v1.git
+cd evolex-v1
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env.local` file in the project root and add the environment variable expected by your application:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+Replace the placeholder with your own API key. Verify the environment variable name against your server-side code before running the application locally.
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application locally:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔮 Future Scope
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Planned enhancements include:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- AI-powered generation of scripts, hooks, captions, and calls to action.
+- Platform-specific content adaptation and multiple content variants.
+- Beginner-friendly idea-to-content guidance, including scripts and storyboards.
+- Deeper personalization informed by creator feedback and experiment outcomes.
 
-## Deploy on Vercel
+These are future enhancements and are not all part of the current prototype.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Vision
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+EVOLEX AI aims to help creators discover opportunities, make smarter content decisions, understand their videos, and continuously improve through personalized AI insights.
+
+---
+
+**Project:** EVOLEX AI  
+**Category:** AI-powered content intelligence  
+**Built for:** Google Cloud AI Builder Cup 2026
