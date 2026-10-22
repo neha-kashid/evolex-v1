@@ -26,7 +26,7 @@ Explore content quality trends, content patterns, content mix, and Creator DNA s
 - **Frontend:** Next.js
 - **Styling:** Tailwind CSS
 - **AI:** Google Gemini API
-- **AI Model:** Google Gemini 3.0 Flash (gemini-3.8-flash)
+- **AI Model:** Google Gemini 3.8 Flash 
 - **Deployment:** Google Cloud Run
 - **Secret Management:** Google Cloud Secret Manager
 
